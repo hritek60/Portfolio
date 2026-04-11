@@ -418,6 +418,12 @@ body {
     font-weight: 500;
 }
 
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
 /* ===== Experience Timeline ===== */
 .timeline {
     position: relative;
