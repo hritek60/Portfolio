@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hritek Pyakurel | IT Support Specialist</title>
-    <meta name="description" content="Portfolio of Hritek Pyakurel - IT Support Specialist with expertise in networking, Windows Server, Active Directory, and Azure.">
+    <title>Hritek Pyakurel | IT Support Specialist & Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Hritek Pyakurel - IT Support Specialist with expertise in networking, Windows Server, Active Directory, and Azure, plus full-stack development experience building a multi-tenant web application with React, TypeScript, and Supabase.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hritek Pyakurel | IT Support Specialist & Full-Stack Developer">
+    <meta property="og:description" content="IT Support Specialist with expertise in networking, Windows Server, Active Directory, and Azure, plus full-stack development experience building a multi-tenant web application with React, TypeScript, and Supabase.">
+    <meta property="og:url" content="https://hritek60.github.io/Portfolio/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hritek Pyakurel | IT Support Specialist & Full-Stack Developer">
+    <meta name="twitter:description" content="IT Support Specialist with expertise in networking, Windows Server, Active Directory, and Azure, plus full-stack development experience.">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,19 +33,27 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#hero" class="nav-logo">HP</a>
-            <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact" class="btn btn-sm">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact" class="btn btn-sm">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Toggle dark mode" id="theme-toggle">
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -36,7 +62,7 @@
         <div class="container">
             <p class="hero-greeting fade-in">Hello, I'm</p>
             <h1 class="hero-name fade-in">Hritek Pyakurel</h1>
-            <p class="hero-title fade-in">IT Support Specialist</p>
+            <p class="hero-title fade-in">IT Support Specialist &amp; Full-Stack Developer</p>
             <p class="hero-location fade-in"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Auburn, NSW</p>
             <div class="hero-cta fade-in">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -63,6 +89,7 @@
             <div class="about-content fade-in">
                 <p>Detail-oriented IT Support Specialist with hands-on experience in troubleshooting hardware, software, and network issues, including Windows Server 2019 on Azure. Skilled in IT asset disposition (ITAD) processing, data sanitization, and secure data destruction to ensure compliance with data protection regulations.</p>
                 <p>Adept at configuring and maintaining desktop infrastructure, networks, and systems. Strong problem-solving abilities combined with excellent communication and collaboration skills. Committed to delivering seamless technical support and contributing effectively to dynamic IT teams.</p>
+                <p>Alongside IT support work, I led a 4-person team building a full-stack, multi-tenant Employee Management System as a university capstone project — gaining hands-on experience across React, TypeScript, Node.js/Express, Supabase/PostgreSQL, and AI integration.</p>
             </div>
         </div>
     </section>
@@ -87,6 +114,21 @@
                         <li>TeamViewer</li>
                         <li>JIRA</li>
                         <li>WordPress</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <div class="skill-category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3 class="skill-category-title">Web Development</h3>
+                    <ul class="skill-tags">
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>Node.js/Express</li>
+                        <li>REST APIs</li>
+                        <li>PostgreSQL (Supabase)</li>
+                        <li>Git</li>
+                        <li>Vercel</li>
                     </ul>
                 </div>
                 <div class="skill-category fade-in">
@@ -161,49 +203,26 @@
                     <div class="project-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
-                    <h3 class="project-title">Employee Management System</h3>
-                    <p class="project-description">A comprehensive employee management platform with AI-integrated performance analytics, designed to streamline business HR operations.</p>
+                    <h3 class="project-title">EMS — Employee Management System <span class="tag" style="vertical-align:middle;">Project Lead</span></h3>
+                    <p class="project-description">A full-stack, multi-tenant employee management platform built with a 4-person team as a university capstone project — covering rostering, payroll, timesheets, leave, performance, and an AI-powered operations assistant.</p>
                     <ul class="project-details">
-                        <li>Full employee lifecycle management — add, edit, and track employee records</li>
-                        <li>Department and role management with organisational structure support</li>
-                        <li>AI-integrated performance matrix for data-driven employee evaluations</li>
-                        <li>Dashboard with real-time analytics and reporting</li>
-                        <li>Secure authentication and role-based access control</li>
+                        <li>Built role-based access control and multi-tenant Row-Level Security (RLS) in Supabase/PostgreSQL, isolating data across multiple businesses on a single platform</li>
+                        <li>Developed a shift-rostering system with overlap detection, roster building, and a publish workflow used by managers to schedule staff</li>
+                        <li>Designed and built a Super-Admin portal for platform-wide business lifecycle management, including trial approvals and provisioning</li>
+                        <li>Deployed and maintained a dual-runtime architecture (Express for local development, Vercel serverless functions for production)</li>
+                        <li>Integrated Google Gemini AI into an in-app "Ops Copilot" supporting natural-language scheduling actions with a preview-then-apply safety flow</li>
+                        <li>Led a 4-person Agile team through the full development lifecycle, from requirements and architecture through final delivery and presentation</li>
                     </ul>
                     <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">AI</span>
-                        <span class="tag">Database</span>
-                        <span class="tag">CRUD</span>
-                        <span class="tag">Dashboard</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://project-ems-6107.onrender.com/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Live Demo</a>
-                        <a href="https://github.com/hritek60/Project-EMS-.git" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    </div>
-                    <h3 class="project-title">AI Chat — Gemini Chatbot</h3>
-                    <p class="project-description">An interactive AI chatbot powered by Google's Gemini API, providing intelligent conversational responses in a clean, user-friendly interface.</p>
-                    <ul class="project-details">
-                        <li>Real-time conversational AI powered by Google Gemini API</li>
-                        <li>Clean, responsive chat interface with message history</li>
-                        <li>Context-aware responses for natural dialogue flow</li>
-                        <li>Deployed on Vercel for fast, serverless hosting</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span class="tag">Gemini API</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Node.js/Express</span>
+                        <span class="tag">Supabase (PostgreSQL)</span>
+                        <span class="tag">Google Gemini AI</span>
                         <span class="tag">Vercel</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://ai-p6zi.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Live Demo</a>
-                        <a href="https://github.com/hritek60/AI.git" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
+                        <a href="https://ems-git-main-hritek60s-projects.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -324,12 +343,15 @@
                 </div>
                 <form class="contact-form fade-in" id="contact-form">
                     <div class="form-group">
+                        <label for="name" class="sr-only">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
+                        <label for="email" class="sr-only">Your Email</label>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
+                        <label for="message" class="sr-only">Your Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">Send Message</button>
